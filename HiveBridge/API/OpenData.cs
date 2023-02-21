@@ -8,7 +8,7 @@ public class OpenData
     }
 
     private IConfiguration Configuration { get; set; }
-    
+
     public void ConfigureOpenData(IConfiguration configuration)
     {
         Configuration = configuration;
