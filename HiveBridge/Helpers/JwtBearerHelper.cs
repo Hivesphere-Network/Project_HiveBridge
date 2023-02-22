@@ -8,7 +8,7 @@ public abstract record JwtBearerHelper
 {
     private static Action<JwtBearerOptions> Options => options =>
     {
-        options.Authority = $"https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_rbjKdGeG7";
+        options.Authority = "https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_rbjKdGeG7";
         options.TokenValidationParameters = new TokenValidationParameters
         {
             IssuerSigningKeyResolver = (_, _, _, parameters) =>
