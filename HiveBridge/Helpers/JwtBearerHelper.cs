@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
@@ -14,8 +13,9 @@ public abstract record JwtBearerHelper
         {
             IssuerSigningKeyResolver = (_, _, _, parameters) =>
             {
-                string json = new WebClient().DownloadString(parameters.ValidIssuer + "/.well-known/jwks.json");
-                var keys = JsonConvert.DeserializeObject<JsonWebKeySet>(json)?.Keys;
+                var client = new HttpClient();
+                string? json = client.GetAsync(parameters.ValidIssuer + "/.well-known/jwks.json").Result.Content.ToString();
+                var keys = JsonConvert.DeserializeObject<JsonWebKeySet>(json!)?.Keys;
                 return keys!;
             },
             ValidateIssuer = true,
