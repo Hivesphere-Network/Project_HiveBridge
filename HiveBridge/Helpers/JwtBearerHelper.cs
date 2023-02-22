@@ -26,6 +26,6 @@ public abstract record JwtBearerHelper
         };
     };
     public static Action<JwtBearerOptions> Get => Options;
-    
+
 
 }
