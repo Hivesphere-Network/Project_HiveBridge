@@ -11,6 +11,6 @@ public abstract record AuthenticationHelper
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     };
-    
+
     public static Action<AuthenticationOptions> Get => Options;
 }

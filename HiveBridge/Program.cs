@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCognitoIdentity();
 builder.Services.AddAuthentication(options => AuthenticationHelper.Get(options)).AddJwtBearer(options => JwtBearerHelper.Get(options));
-builder.Services.AddAuthorization(configure:AuthorizationHelper.Get);
+builder.Services.AddAuthorization(configure: AuthorizationHelper.Get);
 
 
 var app = builder.Build();

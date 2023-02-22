@@ -12,7 +12,7 @@ public static class OpenData
     {
         return Task.FromResult(Results.Ok());
     }
-    
+
     private static Task<IResult> TestAuthentication()
     {
         Results.Text("Authenticated");
