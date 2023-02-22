@@ -1,16 +1,15 @@
 ﻿namespace Project_HiveBridge.API;
 
-public class OpenData
+public static class OpenData
 {
-    public OpenData(IConfiguration configuration)
+    public static void ConfigureOpenDataApi(this WebApplication app)
     {
-        Configuration = configuration;
+        app.MapGet("/api/TestConnection", TestConnection).WithName("TestConnection");
     }
 
-    private IConfiguration Configuration { get; set; }
-
-    public void ConfigureOpenData(IConfiguration configuration)
+    private static Task<IResult> TestConnection()
     {
-        Configuration = configuration;
+        return Task.FromResult(Results.Ok());
     }
+
 }
