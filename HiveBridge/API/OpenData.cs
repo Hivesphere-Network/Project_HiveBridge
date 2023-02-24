@@ -1,16 +1,22 @@
 ﻿namespace Project_HiveBridge.API;
 
-public class OpenData
+public static class OpenData
 {
-    public OpenData(IConfiguration configuration)
+    public static void ConfigureOpenDataApi(this WebApplication app)
     {
-        Configuration = configuration;
+        app.MapGet("/api/TestConnection", TestConnectionAsync).WithName("TestConnection");
+        app.MapGet("/api/TestAuthentication", TestAuthenticationAsync).WithName("TestAuthentication").RequireAuthorization();
     }
 
-    private IConfiguration Configuration { get; set; }
-
-    public void ConfigureOpenData(IConfiguration configuration)
+    private static Task<IResult> TestConnectionAsync()
     {
-        Configuration = configuration;
+        return Task.FromResult(Results.Ok());
     }
+
+    private static Task<IResult> TestAuthenticationAsync()
+    {
+        Results.Text("Authenticated");
+        return Task.FromResult(Results.Ok());
+    }
+
 }
