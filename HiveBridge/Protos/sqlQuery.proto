@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Hive.Protocol";
+
+service HiveHandshake {
+    rpc Handshake (HandshakeRequest) returns (HandshakeResponse);
+}
+
+message HandshakeRequest 
+{
+    string clientVersion = 1;
+    string clientName = 2;
+}
+
+message HandshakeResponse 
+{
+    string serverVersion = 1;
+    string serverName = 2;
+}
