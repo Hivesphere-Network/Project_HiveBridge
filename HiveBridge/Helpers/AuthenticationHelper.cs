@@ -7,7 +7,6 @@ public abstract record AuthenticationHelper
 {
     private static Action<AuthenticationOptions> Options => options =>
     {
-        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     };
