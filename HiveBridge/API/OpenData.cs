@@ -10,13 +10,12 @@ public static class OpenData
 
     private static Task<IResult> TestConnectionAsync()
     {
-        return Task.FromResult(Results.Ok());
+        return Task.FromResult(Results.Ok("Connected"));
     }
 
     private static Task<IResult> TestAuthenticationAsync()
     {
-        Results.Text("Authenticated");
-        return Task.FromResult(Results.Ok());
+        return Task.FromResult(Results.Ok("Authenticated"));
     }
 
 }
