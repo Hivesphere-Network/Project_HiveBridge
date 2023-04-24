@@ -4,7 +4,6 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Project_HiveBridge.API;
 using Project_HiveBridge.Helpers;
-using Project_HiveBridge.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,6 +54,5 @@ app.UseAuthorization();
 // Configure Rest APIs
 app.ConfigureOpenDataApi();
 
-app.MapGrpcService<HiveVaultService>().AllowAnonymous();
 app.MapGrpcReflectionService();
 app.Run();

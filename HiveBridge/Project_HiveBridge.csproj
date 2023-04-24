@@ -29,7 +29,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\sqlQuery.proto" GrpcServices="Server,Client" />
+    <Protobuf Include="..\HiveSphere-Shared\Protos\HiveGraphData.proto" GrpcServices="Client" />
+    <Protobuf Include="..\HiveSphere-Shared\Protos\HiveHandshake.proto" GrpcServices="Client" />
+    <Protobuf Include="..\HiveSphere-Shared\Protos\HiveVaultServiceNoSql.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\HiveSphere-Shared\Protos\HiveGraphData.proto">
+      <Link>Protos\HiveGraphData.proto</Link>
+    </Content>
+    <Content Include="..\HiveSphere-Shared\Protos\HiveHandshake.proto">
+      <Link>Protos\HiveHandshake.proto</Link>
+    </Content>
+    <Content Include="..\HiveSphere-Shared\Protos\HiveVaultServiceNoSql.proto">
+      <Link>Protos\HiveVaultServiceNoSql.proto</Link>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
