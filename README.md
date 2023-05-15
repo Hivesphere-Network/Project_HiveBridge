@@ -10,4 +10,4 @@ HiveBridge uses industry-standard encryption and authentication mechanisms to en
 
 ## Current Status
 
-[![DeepSource](https://deepsource.io/gh/PramudithaPothuwila/HiveBridge.svg/?label=active+issues&show_trend=true&token=agjuZCYZoMYM22tvjNUZb4cr)](https://deepsource.io/gh/PramudithaPothuwila/HiveBridge/?ref=repository-badge)
+[![DeepSource](https://app.deepsource.com/gh/Hivesphere-Network/Project_HiveBridge.svg/?label=active+issues&show_trend=true&token=w8YHz-cf-OJWZDe5XAvW-Rph)](https://app.deepsource.com/gh/Hivesphere-Network/Project_HiveBridge/?ref=repository-badge)
